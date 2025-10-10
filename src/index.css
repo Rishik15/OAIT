@@ -1,0 +1,47 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Poly&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.oait-logo {
+  font-family: 'Poly', serif;
+}
+
+.default-font{
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.hero-txt {
+  color: #F2F5F8;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+
+}
+
+html{
+  scroll-behavior: smooth;
+  scroll-padding-top: 50px; 
+}
+
+::-webkit-scrollbar {
+  width: 10px; 
+}
+
+::-webkit-scrollbar-track {
+  background: #0d0d0d; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888787; 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #888; 
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #555 #0d0d0d; 
+}
