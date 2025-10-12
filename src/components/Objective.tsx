@@ -45,21 +45,23 @@ const ObjectiveSection = () => {
       <h2 className="text-2xl md:text-3xl font-extrabold text-black tracking-wide mb-2">
         OUR OBJECTIVE
       </h2>
-      <div className="w-16 h-[3px] bg-black mb-12 rounded"></div>
+      <div className="w-16 h-[3px] bg-black mb-10 rounded"></div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-[900px]">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-[900px]">
         {objectives.map((item, idx) => (
           <div
             key={idx}
-            className="bg-[#E8E8E8] p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-center text-center"
+            className="bg-[#E8E8E8] p-6 sm:p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-center text-center"
           >
             <img
               src={item.icon}
               alt="icon"
-              className="w-16 h-16 mb-6"
+              className="w-14 h-14 sm:w-16 sm:h-16 mb-6"
               loading="lazy"
             />
-            <p className="text-[16px] text-black leading-relaxed">{item.text}</p>
+            <p className="text-[15px] sm:text-[16px] text-black leading-relaxed">
+              {item.text}
+            </p>
           </div>
         ))}
       </div>

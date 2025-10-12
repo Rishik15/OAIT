@@ -1,4 +1,4 @@
-import Footer from "../components/Footer";
+import ContactForm from "../components/Contact";
 import HeroSection from "../components/Herosection";
 import HighlightsSection from "../components/Highlight";
 import LecturesSection from "../components/Lectures";
@@ -18,7 +18,7 @@ export const Home = () =>{
             <HighlightsSection />
             <MembersSection />
             <LecturesSection />
-            <Footer />
+            <ContactForm />
         </>
     );
 }
