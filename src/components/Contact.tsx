@@ -104,7 +104,7 @@ const ContactForm = () => {
         )}
       </form>
 
-      <div className="w-full flex md:flex-col flex-row md:items-center items-end md:justify-center justify-end mt-6 md:mt-12 md:text-center text-right px-2 md:px-6">
+      <div className="w-full flex md:flex-col flex-row items-center justify-center mt-8 md:mt-12 md:text-center text-right px-2 md:px-6">
         <p className="text-sm text-gray-100">
           © {new Date().getFullYear()} Open AI Team — All Rights Reserved.
         </p>
