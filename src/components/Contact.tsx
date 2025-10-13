@@ -41,7 +41,10 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="bg-black text-white py-12 px-4 sm:px-6 flex flex-col items-center">
+    <section
+      id="contact us"
+      className="bg-black text-white py-15 px-4 sm:px-6 flex flex-col items-center"
+    >
       <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-2 text-center">
         Contact Us
       </h2>
@@ -102,7 +105,7 @@ const ContactForm = () => {
       </form>
 
       <div className="w-full flex md:flex-col flex-row md:items-center items-end md:justify-center justify-end mt-6 md:mt-12 md:text-center text-right px-2 md:px-6">
-        <p className="text-sm text-gray-500">
+        <p className="text-sm text-gray-100">
           © {new Date().getFullYear()} Open AI Team — All Rights Reserved.
         </p>
       </div>

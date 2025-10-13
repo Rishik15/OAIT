@@ -19,7 +19,7 @@ const Navbar = () => {
     }
   };
 
-  const sections = ["Objective", "Vision", "Members", "Lectures"];
+  const sections = ["Objective", "Vision", "Members", "Lectures", "Contact Us"];
 
   return (
     <nav
