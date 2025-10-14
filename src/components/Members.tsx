@@ -13,6 +13,7 @@ const MembersSection: FC = () => {
   const members: Record<SectionKey, Member[]> = {
     founding: [
       { name: "Chengjun Liu", role: "Professor of Computer Science, NJIT" },
+      { name: "TBA", role: "To be announced" }
     ],
     collaborating: [{ name: "TBA", role: "To be announced" }],
     supporting: [
@@ -34,10 +35,12 @@ const MembersSection: FC = () => {
         role: "Bachelor's in Computer Science, NJIT",
       },
       { name: "Karan Kanda", role: "Bachelor's in Computer Science, NJIT" },
+      { name: "TBA", role: "To be announced" }
     ],
     advisory: [
       { name: "Michael Recce", role: "CEO, AlphaROC" },
       { name: "Guopei Qiao", role: "AMD" },
+      { name: "TBA", role: "To be announced" }
     ],
   };
 
