@@ -11,12 +11,32 @@ const HeroSection = () => {
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
+      aria-labelledby="hero-heading"
+      itemScope
+      itemType="https://schema.org/Organization"
     >
+      <img
+        src={heroImage}
+        alt="Background representing artificial intelligence and technology"
+        className="absolute inset-0 w-full h-full object-cover opacity-0"
+        loading="eager"
+        decoding="async"
+        fetchPriority="high"
+        itemProp="image"
+      />
+
       <div className="z-10 pt-20 px-4 flex flex-col items-center">
-        <h1 className="hero-txt font-extrabold text-[34px] sm:text-[44px] md:text-[54px] leading-tight md:leading-[77px] tracking-wide text-white">
+        <h1
+          id="hero-heading"
+          className="hero-txt font-extrabold text-[34px] sm:text-[44px] md:text-[54px] leading-tight md:leading-[77px] tracking-wide text-white"
+          itemProp="name"
+        >
           THE OPEN AI TEAM
         </h1>
-        <p className="mt-3 sm:mt-5 text-[18px] sm:text-[24px] md:text-[32px] font-light drop-shadow-md text-[#FFFFFF]">
+        <p
+          className="mt-3 sm:mt-5 text-[18px] sm:text-[24px] md:text-[32px] font-light drop-shadow-md text-[#FFFFFF]"
+          itemProp="slogan"
+        >
           AI for a Better Tomorrow
         </p>
       </div>

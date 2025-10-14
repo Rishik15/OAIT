@@ -5,23 +5,40 @@ const VisionSection = () => {
     <section
       id="vision"
       className="bg-white py-12 px-4 sm:px-6 flex flex-col items-center text-center md:text-left"
+      aria-labelledby="vision-heading"
+      itemScope
+      itemType="https://schema.org/Organization"
     >
-      <h2 className="text-2xl md:text-3xl font-extrabold text-black tracking-wide mb-2">
+      <h2
+        id="vision-heading"
+        className="text-2xl md:text-3xl font-extrabold text-black tracking-wide mb-2"
+        itemProp="name"
+      >
         Our Vision
       </h2>
-      <div className="w-16 h-[3px] bg-black mb-10 rounded"></div>
+      <div className="w-16 h-[3px] bg-black mb-10 rounded" role="presentation"></div>
 
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-10">
-        <div className="flex justify-center md:justify-start w-full md:w-1/2">
+        <div
+          className="flex justify-center md:justify-start w-full md:w-1/2"
+          itemProp="image"
+          itemScope
+          itemType="https://schema.org/ImageObject"
+        >
           <img
             src={visionImage}
             alt="AI Network Illustration"
             className="w-[260px] sm:w-[320px] md:w-[400px] h-auto"
             loading="lazy"
+            decoding="async"
           />
+          <meta itemProp="caption" content="AI Network Illustration" />
         </div>
 
-        <div className="w-full md:w-1/2 text-[16px] sm:text-[17px] md:text-[18px] leading-relaxed text-gray-900">
+        <div
+          className="w-full md:w-1/2 text-[16px] sm:text-[17px] md:text-[18px] leading-relaxed text-gray-900"
+          itemProp="description"
+        >
           <p className="border-l-4 border-black pl-3 sm:pl-4 mb-4">
             The Open AI Team (OAIT) is pioneering the next generation of
             intelligence systems — moving beyond language models to create
