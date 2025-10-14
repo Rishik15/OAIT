@@ -1,4 +1,4 @@
-import visionImage from "../assets/neural-network.png"; 
+import visionImage from "../assets/neural-network.png";
 
 const VisionSection = () => {
   return (
@@ -31,23 +31,23 @@ const VisionSection = () => {
           <div className="space-y-1 mb-6">
             <p>
               <span className="text-[#E53935] font-semibold">LIMs</span> – Large
-              Image Models (LIMs)
+              Image Models
             </p>
             <p>
               <span className="text-[#E53935] font-semibold">LVMs</span> – Large
-              Video Models (LVMs)
+              Video Models
             </p>
             <p>
               <span className="text-[#E53935] font-semibold">LXMs</span> – Large
-              X-ray Models (LXMs)
+              X-ray Models
             </p>
             <p>
               <span className="text-[#E53935] font-semibold">LMMs</span> – Large
-              MRI Models (LMMs)
+              MRI Models
             </p>
             <p>
               <span className="text-[#E53935] font-semibold">LOMs</span> – Large
-              Omics Models (LOMs)
+              Omics Models
             </p>
           </div>
 
