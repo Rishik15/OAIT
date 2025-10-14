@@ -1,13 +1,8 @@
 import { useState, type FC } from "react";
-import chengjun from "../assets/chengjun.webp";
-import chengyu from "../assets/chengyu.webp";
-import rishik from "../assets/rishik.webp";
-import michael from "../assets/michael.webp";
 
 interface Member {
   name: string;
   role: string;
-  image?: string;
 }
 
 type SectionKey = "founding" | "collaborating" | "supporting" | "advisory";
@@ -17,30 +12,32 @@ const MembersSection: FC = () => {
 
   const members: Record<SectionKey, Member[]> = {
     founding: [
-      {
-        name: "Chengjun Liu",
-        role: "Professor of Computer Science, NJIT",
-        image: chengjun,
-      },
-      { name: "TBA", role: "To be announced" },
+      { name: "Chengjun Liu", role: "Professor of Computer Science, NJIT" },
     ],
     collaborating: [{ name: "TBA", role: "To be announced" }],
     supporting: [
+      { name: "Chengyu Yang [1]", role: "Phd in computer science, NJIT" },
+      { name: "Zhou Yu", role: "Phd in computer science, NJIT" },
       {
-        name: "Chengyu Yang [1]",
-        role: "Doctoral Student of CS, NJIT",
-        image: chengyu,
+        name: "Krishna Sathvika Ganni",
+        role: "Master Student, NJIT",
       },
+      { name: "Jai Bharath Reddy Kallam", role: "Master Student, NJIT" },
+      { name: "Anagha Bharadwaj", role: "Master Student, NJIT" },
+      { name: "Punith Pechetti", role: "Master Student, NJIT" },
+      { name: "Nikunj Nileshkumar Kantaria", role: "Master Student, NJIT" },
+      { name: "Jay Ashokkumar Mehta", role: "Master Student, NJIT" },
+      { name: "Sai Mahathma Reddy Bokka", role: "Master Student, NJIT" },
+      { name: "Chirag Sharma", role: "Master Student, NJIT" },
       {
         name: "Rishik Reddy Yesgari [1]",
-        role: "Undergraduate Student of CS, NJIT",
-        image: rishik,
+        role: "Bachelor's in Computer Science, NJIT",
       },
-      { name: "TBA", role: "To be announced" },
+      { name: "Karan Kanda", role: "Bachelor's in Computer Science, NJIT" },
     ],
     advisory: [
-      { name: "Michael Recce", role: "CEO, AlphaROC", image: michael },
-      { name: "TBA", role: "To be announced" },
+      { name: "Michael Recce", role: "CEO, AlphaROC" },
+      { name: "Guopei Qiao", role: "AMD" },
     ],
   };
 
@@ -57,14 +54,7 @@ const MembersSection: FC = () => {
       <div className="max-w-7xl w-full bg-[#E8E8E8] rounded-2xl shadow-md border border-gray-200 p-6 sm:p-8 md:p-10">
         <div className="flex md:hidden overflow-x-auto border-b border-gray-300 mb-8 no-scrollbar px-4">
           <div className="flex space-x-6 sm:space-x-8 min-w-max">
-            {(
-              [
-                "founding",
-                "collaborating",
-                "supporting",
-                "advisory",
-              ] as SectionKey[]
-            ).map((key) => (
+            {(["founding", "collaborating", "supporting", "advisory"] as SectionKey[]).map((key) => (
               <button
                 key={key}
                 onClick={() => setActiveSection(key)}
@@ -88,14 +78,7 @@ const MembersSection: FC = () => {
 
         <div className="hidden md:flex flex-row">
           <aside className="w-1/4 border-r border-gray-300 pr-8 space-y-4">
-            {(
-              [
-                "founding",
-                "collaborating",
-                "supporting",
-                "advisory",
-              ] as SectionKey[]
-            ).map((key) => (
+            {(["founding", "collaborating", "supporting", "advisory"] as SectionKey[]).map((key) => (
               <button
                 key={key}
                 onClick={() => setActiveSection(key)}
@@ -121,22 +104,9 @@ const MembersSection: FC = () => {
               {members[activeSection].map((person, idx) => (
                 <div
                   key={idx}
-                  className="group flex flex-col items-center text-center space-y-2 min-w-[180px] transition-all"
+                  className="flex flex-col items-start text-left space-y-1 min-w-[220px] transition-all"
                 >
-                  <div className="w-24 h-24 rounded-xl overflow-hidden shadow-sm border border-gray-300 transition-transform duration-300 group-hover:scale-105">
-                    {person.image ? (
-                      <img
-                        src={person.image}
-                        alt={person.name}
-                        className="w-full h-full object-cover"
-                      />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center bg-gray-300 text-gray-600 text-3xl font-bold">
-                        ?
-                      </div>
-                    )}
-                  </div>
-                  <h3 className="text-[16px] font-semibold text-gray-900 transition-colors duration-300 group-hover:text-[#E53935]">
+                  <h3 className="text-[16px] font-semibold text-gray-900 transition-colors duration-300 hover:text-[#E53935]">
                     {person.name}
                   </h3>
                   <p className="text-[14px] text-gray-600">{person.role}</p>
@@ -144,46 +114,27 @@ const MembersSection: FC = () => {
               ))}
             </div>
             {activeSection === "supporting" && (
-              <p className="text-sm italic text-gray-600 text-center mt-6">
-                [1] NJIT Grace Hopper Artificial Intelligence Research Institute
-                seed grant, NJIT, 2025–2026.
+              <p className="text-sm italic text-gray-600 text-center mt-8">
+                [1] NJIT Grace Hopper Artificial Intelligence Research Institute seed grant, NJIT, 2025–2026.
               </p>
             )}
           </div>
         </div>
 
         <div className="md:hidden">
-          <div className="grid grid-cols-2 gap-6 justify-items-center">
+          <div className="grid grid-cols-1 gap-4 justify-items-start">
             {members[activeSection].map((person, idx) => (
-              <div
-                key={idx}
-                className="group flex flex-col items-center text-center space-y-2 transition-all"
-              >
-                <div className="w-20 h-20 rounded-xl overflow-hidden shadow-sm border border-gray-300 transition-transform duration-300 group-hover:scale-105">
-                  {person.image ? (
-                    <img
-                      src={person.image}
-                      alt={person.name}
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center bg-gray-300 text-gray-600 text-2xl font-bold">
-                      ?
-                    </div>
-                  )}
-                </div>
-                <h3 className="text-[14px] font-semibold text-gray-900 transition-colors duration-300 group-hover:text-[#E53935]">
+              <div key={idx} className="text-left">
+                <h3 className="text-[14px] font-semibold text-gray-900 hover:text-[#E53935] transition-colors duration-300">
                   {person.name}
                 </h3>
                 <p className="text-[12px] text-gray-600">{person.role}</p>
               </div>
             ))}
           </div>
-
           {activeSection === "supporting" && (
             <p className="text-xs italic text-gray-600 text-center mt-6">
-              [1] NJIT Grace Hopper Artificial Intelligence Research Institute
-              seed grant, NJIT, 2025–2026.
+              [1] NJIT Grace Hopper Artificial Intelligence Research Institute seed grant, NJIT, 2025–2026.
             </p>
           )}
         </div>
