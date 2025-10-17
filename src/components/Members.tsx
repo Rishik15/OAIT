@@ -3,100 +3,118 @@ import chengjun from "../assets/chengjun.webp";
 import chengyu from "../assets/chengyu.webp";
 import rishik from "../assets/rishik.webp";
 import michael from "../assets/michael.webp";
-import jensen from "../assets/jensenhuang.webp";
+import jensen from "../assets/jensenhuang.jpg";
 import qiao from "../assets/qiao.webp";
+import zhou from "../assets/zhou.jpg";
+import mehta from "../assets/MehtaJayAshokkumar.jpeg";
+import jai from "../assets/KallamJaiBharathReddy.jpeg";
+import sathvika from "../assets/GanniKrishnaSathvika.jpeg";
+import sai from "../assets/BokkaSaiMahathmaReddy.jpeg";
+import anagha from "../assets/BharadwajAnagha.jpeg";
+import nikunj from "../assets/Nikunj.jpg";
+import karan from "../assets/karan.jpg";
 
 interface Member {
   name: string;
-  role: string;
+  role?: string;
   image?: string;
 }
 
-type SectionKey = "founding" | "collaborating" | "supporting" | "advisory";
-type SubSectionKey = "phd" | "masters" | "undergrad";
+type SectionKey = "core" | "collaborating" | "advisory" | "founding";
 
 const MembersSection: FC = () => {
-  const [activeSection, setActiveSection] = useState<SectionKey>("founding");
-  const [activeSubSection, setActiveSubSection] =
-    useState<SubSectionKey>("phd");
+  const [activeSection, setActiveSection] = useState<SectionKey>("core");
 
   const members = {
+    core: {
+      faculty: [
+        {
+          name: "Chengjun Liu",
+          role: "Professor of Computer Science, NJIT",
+          image: chengjun,
+        },
+      ],
+      doctoral: [
+        { name: "Yang, Chengyu [1]", image: chengyu },
+        { name: "Yu, Zhou", image: zhou },
+      ],
+      masters: [
+        { name: "Bharadwaj, Anagha", image: anagha},
+        { name: "Bokka, Sai Mahathma Reddy", image: sai},
+        { name: "Ganni, Krishna Sathvika", image: sathvika },
+        { name: "Kallam, Jai Bharath Reddy", image: jai},
+        { name: "Kantaria, Nikunj Nileshkumar", image: nikunj},
+        { name: "Mehta, Jay Ashokkumar", image: mehta },
+        { name: "Pechetti, Punith"},
+        { name: "Sharma, Chirag"},
+      ],
+      undergrad: [
+        { name: "Kanda, Karan", image: karan},
+        { name: "Yesgari, Rishik Reddy [1]", image: rishik },
+      ],
+    },
+    collaborating: [
+      {
+        name: "Andrew Sohn",
+        role: "Associate Professor of Computer Science, NJIT (SAE: GPU Expert)",
+      },
+    ],
+    advisory: [
+      { name: "Guopei Qiao", role: "SMTS, AMD", image: qiao },
+      { name: "Michael Recce", role: "CEO, AlphaROC", image: michael },
+      { name: "TBA", role: "To be announced" },
+    ],
     founding: [
       {
         name: "Chengjun Liu",
         role: "Professor of Computer Science, NJIT",
         image: chengjun,
       },
-      { name: "I'm coming" },
-      { name: "TBA", role: "To be announced" },
-    ],
-    collaborating: [{ name: "TBA", role: "To be announced" }],
-    supporting: {
-      phd: [{ name: "Chengyu Yang [1]", image: chengyu }, { name: "Zhou Yu" }],
-      masters: [
-        { name: "Krishna Sathvika Ganni" },
-        { name: "Jai Bharath Reddy Kallam" },
-        { name: "Anagha Bharadwaj" },
-        { name: "Punith Pechetti" },
-        { name: "Nikunj Nileshkumar Kantaria" },
-        { name: "Jay Ashokkumar Mehta" },
-        { name: "Sai Mahathma Reddy Bokka" },
-        { name: "Chirag Sharma" },
-      ],
-      undergrad: [
-        {
-          name: "Rishik Reddy Yesgari [1]",
-          image: rishik,
-        },
-        { name: "Karan Kanda" },
-      ],
-    },
-    advisory: [
-      { name: "Michael Recce", role: "CEO, AlphaROC", image: michael },
-      { name: "Guopei Qiao", role: "AMD", image: qiao },
+      { name: "I'm coming", image: jensen },
       { name: "TBA", role: "To be announced" },
     ],
   };
 
-  const renderAvatar = (person: Member, section?: SectionKey) => {
-    if (
-      section === "founding" &&
-      person.name.toLowerCase().includes("coming")
-    ) {
+  const renderAvatar = (person: Member) => {
+    
+
+    if (person.name.toLowerCase().includes("tba")) {
       return (
-        <div className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0 shadow-sm">
+        <div className="w-15 h-15 rounded-full bg-gray-400 text-white flex items-center justify-center font-bold shadow-sm flex-shrink-0">
+          ?
+        </div>
+      );
+    }
+
+    if (person.name.includes("I'm coming") && person.image) {
+      return (
+        <div className="relative w-15 h-15 rounded-full overflow-hidden flex-shrink-0 shadow-sm">
           <img
-            src={jensen}
-            alt="Jensen Huang"
-            className="absolute inset-0 w-full h-full object-cover opacity-70"
+            src={person.image}
+            alt={person.name}
+            className={`absolute inset-0 w-full h-full`}
           />
-          <div className="absolute inset-0 bg-gray-500/70 flex items-center justify-center text-white font-bold text-lg">
+          <div className="absolute inset-0 bg-black/40 flex items-center justify-center text-white/70 font-bold text-lg">
             ?
           </div>
         </div>
       );
     }
 
-    if (person.name.toLowerCase().includes("tba")) {
+    if (person.image) {
       return (
-        <div className="w-12 h-12 rounded-full bg-gray-400 text-white flex items-center justify-center font-bold shadow-sm flex-shrink-0">
-          ?
+        <div className="relative w-15 h-15 rounded-full overflow-hidden flex-shrink-0 shadow-sm">
+          <img
+            src={person.image}
+            alt={person.name}
+            className={`absolute inset-0 w-full h-full`}
+          />
         </div>
       );
     }
 
-    if (person.image) {
-      return (
-        <img
-          src={person.image}
-          alt={person.name}
-          className="w-12 h-12 rounded-full object-cover shadow-sm flex-shrink-0"
-        />
-      );
-    }
-
     return (
-      <div className="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center shadow-sm flex-shrink-0">
+      <div className="w-15 h-15 rounded-full bg-gray-300 flex items-center justify-center shadow-sm flex-shrink-0">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -114,7 +132,7 @@ const MembersSection: FC = () => {
   };
 
   const renderMemberGrid = (list: Member[]) => (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-6 mt-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-6 mt-4">
       {list.map((person, idx) => (
         <article
           key={idx}
@@ -123,17 +141,39 @@ const MembersSection: FC = () => {
           itemScope
           itemType="https://schema.org/Person"
         >
-          {renderAvatar(person, activeSection)}
+          {renderAvatar(person)}
           <div className="flex flex-col justify-center">
             <h3 className="text-[15px] font-semibold text-gray-900 hover:text-[#E53935] transition-colors duration-300">
               {person.name}
             </h3>
-            <p className="text-[13px] text-gray-600 leading-tight">
-              {person.role}
-            </p>
+            <p className="text-[13px] text-gray-600 leading-tight">{person.role}</p>
           </div>
         </article>
       ))}
+    </div>
+  );
+
+  const renderCoreSection = () => (
+    <div className="space-y-10">
+      <div>
+        <h3 className="text-lg font-bold text-gray-900 mb-2">Faculty:</h3>
+        {renderMemberGrid(members.core.faculty)}
+      </div>
+      <div>
+        <h3 className="text-lg font-bold text-gray-900 mb-2">Doctoral Students:</h3>
+        {renderMemberGrid(members.core.doctoral)}
+      </div>
+      <div>
+        <h3 className="text-lg font-bold text-gray-900 mb-2">Master’s Students:</h3>
+        {renderMemberGrid(members.core.masters)}
+      </div>
+      <div>
+        <h3 className="text-lg font-bold text-gray-900 mb-2">Undergraduate Students:</h3>
+        {renderMemberGrid(members.core.undergrad)}
+      </div>
+      <p className="text-sm italic text-gray-600 text-center mt-6">
+        [1] NJIT Grace Hopper Artificial Intelligence Research Institute seed grant, NJIT, 2025–2026.
+      </p>
     </div>
   );
 
@@ -150,47 +190,31 @@ const MembersSection: FC = () => {
       <div className="max-w-7xl w-full bg-[#E8E8E8] rounded-2xl shadow-md border border-gray-200 p-6 sm:p-8 md:p-10">
         <div className="flex md:hidden overflow-x-auto border-b border-gray-300 mb-8 no-scrollbar px-4">
           <div className="flex space-x-6 sm:space-x-8 min-w-max">
-            {(
-              [
-                "founding",
-                "collaborating",
-                "supporting",
-                "advisory",
-              ] as SectionKey[]
-            ).map((key) => (
+            {(["core", "collaborating", "advisory", "founding"] as SectionKey[]).map((key) => (
               <button
                 key={key}
                 onClick={() => setActiveSection(key)}
                 className={`relative pb-2 text-base sm:text-lg font-medium whitespace-nowrap ${
                   activeSection === key
-                    ? "text-[#E53935] font-semibold after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-[#E53935] after:rounded-full"
+                    ? "text-[#E53935] font-semibold after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-[#E53935]"
                     : "text-gray-800 hover:text-[#E53935]"
                 }`}
               >
-                {key === "founding"
-                  ? "Founding"
+                {key === "core"
+                  ? "Core Members"
                   : key === "collaborating"
-                  ? "Collaborating"
-                  : key === "supporting"
-                  ? "Supporting"
-                  : "Advisory"}
+                  ? "Collaborating Members"
+                  : key === "advisory"
+                  ? "Advisory Board"
+                  : "Founding Members"}
               </button>
             ))}
           </div>
         </div>
 
-        {/* Desktop Layout */}
         <div className="hidden md:flex flex-row">
-          {/* Sidebar */}
           <aside className="w-1/4 border-r border-gray-300 pr-8 space-y-4">
-            {(
-              [
-                "founding",
-                "collaborating",
-                "supporting",
-                "advisory",
-              ] as SectionKey[]
-            ).map((key) => (
+            {(["core", "collaborating", "advisory", "founding"] as SectionKey[]).map((key) => (
               <button
                 key={key}
                 onClick={() => setActiveSection(key)}
@@ -200,104 +224,28 @@ const MembersSection: FC = () => {
                     : "text-gray-800 hover:text-[#E53935]"
                 }`}
               >
-                {key === "founding"
-                  ? "Founding Members"
+                {key === "core"
+                  ? "Core Members"
                   : key === "collaborating"
                   ? "Collaborating Members"
-                  : key === "supporting"
-                  ? "Supporting Students"
-                  : "Advisory Board"}
+                  : key === "advisory"
+                  ? "Advisory Board"
+                  : "Founding Members"}
               </button>
             ))}
           </aside>
 
-          {/* Main Content */}
           <div className="w-3/4 pl-8">
-            {/* Normal sections */}
-            {activeSection !== "supporting" && (
-              <>{renderMemberGrid(members[activeSection] as Member[])}</>
-            )}
-
-            {/* Supporting section with sub-tabs */}
-            {activeSection === "supporting" && (
-              <>
-                {/* Subsection Tabs */}
-                <div className="flex flex-wrap gap-4 border-b border-gray-300 pb-3 mb-4">
-                  {(["phd", "masters", "undergrad"] as SubSectionKey[]).map(
-                    (sub) => (
-                      <button
-                        key={sub}
-                        onClick={() => setActiveSubSection(sub)}
-                        className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                          activeSubSection === sub
-                            ? "bg-[#E53935] text-white shadow"
-                            : "bg-white text-gray-800 hover:bg-gray-100"
-                        }`}
-                      >
-                        {sub === "phd"
-                          ? "PhD Students"
-                          : sub === "masters"
-                          ? "Master Students"
-                          : "Undergraduate Students"}
-                      </button>
-                    )
-                  )}
-                </div>
-
-                {renderMemberGrid(
-                  members.supporting[activeSubSection] as Member[]
-                )}
-
-                <p className="text-sm italic text-gray-600 text-center mt-8">
-                  [1] NJIT Grace Hopper Artificial Intelligence Research
-                  Institute seed grant, NJIT, 2025–2026.
-                </p>
-              </>
-            )}
+            {activeSection === "core"
+              ? renderCoreSection()
+              : renderMemberGrid(members[activeSection] as Member[])}
           </div>
         </div>
 
-        {/* Mobile layout */}
-        <div className="md:hidden mt-2">
-          {activeSection !== "supporting" && (
-            <>{renderMemberGrid(members[activeSection] as Member[])}</>
-          )}
-
-          {activeSection === "supporting" && (
-            <>
-              {/* Subsection Tabs for Mobile */}
-              <div className="flex justify-center flex-wrap gap-2 mb-3">
-                {(["phd", "masters", "undergrad"] as SubSectionKey[]).map(
-                  (sub) => (
-                    <button
-                      key={sub}
-                      onClick={() => setActiveSubSection(sub)}
-                      className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
-                        activeSubSection === sub
-                          ? "bg-[#E53935] text-white shadow-sm"
-                          : "bg-white text-gray-800 hover:bg-gray-100"
-                      }`}
-                    >
-                      {sub === "phd"
-                        ? "PhD"
-                        : sub === "masters"
-                        ? "Masters"
-                        : "Undergrad"}
-                    </button>
-                  )
-                )}
-              </div>
-
-              {renderMemberGrid(
-                members.supporting[activeSubSection] as Member[]
-              )}
-
-              <p className="text-xs italic text-gray-600 text-center mt-6">
-                [1] NJIT Grace Hopper Artificial Intelligence Research Institute
-                seed grant, NJIT, 2025–2026.
-              </p>
-            </>
-          )}
+        <div className="md:hidden mt-4">
+          {activeSection === "core"
+            ? renderCoreSection()
+            : renderMemberGrid(members[activeSection] as Member[])}
         </div>
       </div>
     </section>
