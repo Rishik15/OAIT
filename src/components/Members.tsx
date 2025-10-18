@@ -9,10 +9,12 @@ import zhou from "../assets/zhou.jpg";
 import mehta from "../assets/MehtaJayAshokkumar.jpeg";
 import jai from "../assets/KallamJaiBharathReddy.jpeg";
 import sathvika from "../assets/GanniKrishnaSathvika.jpeg";
-import sai from "../assets/BokkaSaiMahathmaReddy.jpeg";
-import anagha from "../assets/BharadwajAnagha.jpeg";
 import nikunj from "../assets/Nikunj.jpg";
+import chirag from "../assets/chirag.jpeg";
+import punith from "../assets/punith.jpeg";
+import chen from "../assets/chen.jpg";
 import karan from "../assets/karan.jpg";
+import andrew from "../assets/andrew.jpg";
 
 interface Member {
   name: string;
@@ -35,28 +37,29 @@ const MembersSection: FC = () => {
         },
       ],
       doctoral: [
+        { name: "Chen, Sijin (advisor: Prof. Perl)", image: chen },
         { name: "Yang, Chengyu [1]", image: chengyu },
         { name: "Yu, Zhou", image: zhou },
       ],
       masters: [
-        { name: "Bharadwaj, Anagha", image: anagha},
-        { name: "Bokka, Sai Mahathma Reddy", image: sai},
         { name: "Ganni, Krishna Sathvika", image: sathvika },
-        { name: "Kallam, Jai Bharath Reddy", image: jai},
-        { name: "Kantaria, Nikunj Nileshkumar", image: nikunj},
+        { name: "Kallam, Jai Bharath Reddy", image: jai },
+        { name: "Kantaria, Nikunj Nileshkumar", image: nikunj },
         { name: "Mehta, Jay Ashokkumar", image: mehta },
-        { name: "Pechetti, Punith"},
-        { name: "Sharma, Chirag"},
+        { name: "Pechetti, Punith", image: punith },
+        { name: "Sharma, Chirag", image: chirag },
+        { name: "Vora, Vineet" },
       ],
       undergrad: [
-        { name: "Kanda, Karan", image: karan},
+        { name: "Kanda, Karan", image: karan },
         { name: "Yesgari, Rishik Reddy [1]", image: rishik },
       ],
     },
     collaborating: [
       {
         name: "Andrew Sohn",
-        role: "Associate Professor of Computer Science, NJIT (SAE: GPU Expert)",
+        role: "Associate Professor of Computer Science, SAE: GPU Expert",
+        image: andrew
       },
     ],
     advisory: [
@@ -76,8 +79,6 @@ const MembersSection: FC = () => {
   };
 
   const renderAvatar = (person: Member) => {
-    
-
     if (person.name.toLowerCase().includes("tba")) {
       return (
         <div className="w-15 h-15 rounded-full bg-gray-400 text-white flex items-center justify-center font-bold shadow-sm flex-shrink-0">
@@ -146,7 +147,9 @@ const MembersSection: FC = () => {
             <h3 className="text-[15px] font-semibold text-gray-900 hover:text-[#E53935] transition-colors duration-300">
               {person.name}
             </h3>
-            <p className="text-[13px] text-gray-600 leading-tight">{person.role}</p>
+            <p className="text-[13px] text-gray-600 leading-tight">
+              {person.role}
+            </p>
           </div>
         </article>
       ))}
@@ -160,19 +163,26 @@ const MembersSection: FC = () => {
         {renderMemberGrid(members.core.faculty)}
       </div>
       <div>
-        <h3 className="text-lg font-bold text-gray-900 mb-2">Doctoral Students:</h3>
+        <h3 className="text-lg font-bold text-gray-900 mb-2">
+          Doctoral Students:
+        </h3>
         {renderMemberGrid(members.core.doctoral)}
       </div>
       <div>
-        <h3 className="text-lg font-bold text-gray-900 mb-2">Master’s Students:</h3>
+        <h3 className="text-lg font-bold text-gray-900 mb-2">
+          Master’s Students:
+        </h3>
         {renderMemberGrid(members.core.masters)}
       </div>
       <div>
-        <h3 className="text-lg font-bold text-gray-900 mb-2">Undergraduate Students:</h3>
+        <h3 className="text-lg font-bold text-gray-900 mb-2">
+          Undergraduate Students:
+        </h3>
         {renderMemberGrid(members.core.undergrad)}
       </div>
       <p className="text-sm italic text-gray-600 text-center mt-6">
-        [1] NJIT Grace Hopper Artificial Intelligence Research Institute seed grant, NJIT, 2025–2026.
+        [1] NJIT Grace Hopper Artificial Intelligence Research Institute seed
+        grant, NJIT, 2025–2026.
       </p>
     </div>
   );
@@ -190,7 +200,9 @@ const MembersSection: FC = () => {
       <div className="max-w-7xl w-full bg-[#E8E8E8] rounded-2xl shadow-md border border-gray-200 p-6 sm:p-8 md:p-10">
         <div className="flex md:hidden overflow-x-auto border-b border-gray-300 mb-8 no-scrollbar px-4">
           <div className="flex space-x-6 sm:space-x-8 min-w-max">
-            {(["core", "collaborating", "advisory", "founding"] as SectionKey[]).map((key) => (
+            {(
+              ["core", "collaborating", "advisory", "founding"] as SectionKey[]
+            ).map((key) => (
               <button
                 key={key}
                 onClick={() => setActiveSection(key)}
@@ -214,7 +226,9 @@ const MembersSection: FC = () => {
 
         <div className="hidden md:flex flex-row">
           <aside className="w-1/4 border-r border-gray-300 pr-8 space-y-4">
-            {(["core", "collaborating", "advisory", "founding"] as SectionKey[]).map((key) => (
+            {(
+              ["core", "collaborating", "advisory", "founding"] as SectionKey[]
+            ).map((key) => (
               <button
                 key={key}
                 onClick={() => setActiveSection(key)}
