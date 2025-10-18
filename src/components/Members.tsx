@@ -37,7 +37,7 @@ const MembersSection: FC = () => {
         },
       ],
       doctoral: [
-        { name: "Chen, Sijin (advisor: Prof. Perl)", image: chen },
+        { name: "Chen, Sijin (Advisor: Prof. Perl)", image: chen },
         { name: "Yang, Chengyu [1]", image: chengyu },
         { name: "Yu, Zhou", image: zhou },
       ],
@@ -59,7 +59,7 @@ const MembersSection: FC = () => {
       {
         name: "Andrew Sohn",
         role: "Associate Professor of Computer Science, SAE: GPU Expert",
-        image: andrew
+        image: andrew,
       },
     ],
     advisory: [
