@@ -9,8 +9,8 @@ const LecturesSection: FC = () => {
       lecturer: "Prof. Liu",
     },
     { title: "Discriminant Analysis and Applications", lecturer: "Prof. Liu" },
-    { title: "Smart Health", lecturer: "Dr. Ghahremannezhad" },
-    { title: "Video Analytics", lecturer: "Dr. Shi" },
+    { title: "Smart Health", lecturer: "Dr. Hadi" },
+    { title: "Video Analytics", lecturer: "Dr. Hang" },
   ];
 
   return (

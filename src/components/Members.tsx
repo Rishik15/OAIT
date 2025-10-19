@@ -3,7 +3,7 @@ import chengjun from "../assets/chengjun.webp";
 import chengyu from "../assets/chengyu.webp";
 import rishik from "../assets/rishik.webp";
 import michael from "../assets/michael.webp";
-import jensen from "../assets/jensenhuang.jpg";
+import jensen from "../assets/JensenHuang.png";
 import qiao from "../assets/qiao.webp";
 import zhou from "../assets/zhou.jpg";
 import mehta from "../assets/MehtaJayAshokkumar.jpeg";
@@ -15,6 +15,7 @@ import punith from "../assets/punith.jpeg";
 import chen from "../assets/chen.jpg";
 import karan from "../assets/karan.jpg";
 import andrew from "../assets/andrew.jpg";
+import vora from "../assets/vora.jpg";
 
 interface Member {
   name: string;
@@ -48,7 +49,7 @@ const MembersSection: FC = () => {
         { name: "Mehta, Jay Ashokkumar", image: mehta },
         { name: "Pechetti, Punith", image: punith },
         { name: "Sharma, Chirag", image: chirag },
-        { name: "Vora, Vineet" },
+        { name: "Vora, Vineet", image: vora},
       ],
       undergrad: [
         { name: "Kanda, Karan", image: karan },
@@ -89,13 +90,13 @@ const MembersSection: FC = () => {
 
     if (person.name.includes("I'm coming") && person.image) {
       return (
-        <div className="relative w-15 h-15 rounded-full overflow-hidden flex-shrink-0 shadow-sm">
+        <div className="relative bg-black w-15 h-15 rounded-full overflow-hidden flex-shrink-0 shadow-sm">
           <img
             src={person.image}
             alt={person.name}
-            className={`absolute inset-0 w-full h-full`}
+            className="absolute inset-0 w-full h-full scale-65"
           />
-          <div className="absolute inset-0 bg-black/40 flex items-center justify-center text-white/70 font-bold text-lg">
+          <div className="absolute inset-0 bg-black/50 flex items-center justify-center text-white/70 font-bold text-lg">
             ?
           </div>
         </div>
