@@ -66,6 +66,7 @@ const MembersSection: FC = () => {
     advisory: [
       { name: "Guopei Qiao", role: "SMTS, AMD", image: qiao },
       { name: "Michael Recce", role: "CEO, AlphaROC", image: michael },
+      { name: "Theresa R. Walton", role: "Assistant Director of Pre-Award, NJIT" },
       { name: "TBA", role: "To be announced" },
     ],
     founding: [
