@@ -16,6 +16,8 @@ import chen from "../assets/chen.jpg";
 import karan from "../assets/karan.jpg";
 import andrew from "../assets/andrew.jpg";
 import vora from "../assets/vora.jpg";
+import jeet from "../assets/jeet.jpg";
+import ashvin from "../assets/ashvin.jpeg";
 
 interface Member {
   name: string;
@@ -43,11 +45,13 @@ const MembersSection: FC = () => {
         { name: "Yu, Zhou", image: zhou },
       ],
       masters: [
+        { name: "Dave, Jeet", image: jeet },
         { name: "Ganni, Krishna Sathvika", image: sathvika },
         { name: "Kallam, Jai Bharath Reddy", image: jai },
         { name: "Kantaria, Nikunj Nileshkumar", image: nikunj },
         { name: "Mehta, Jay Ashokkumar", image: mehta },
         { name: "Pechetti, Punith", image: punith },
+        { name: "Sharma, Ashvin", image: ashvin },
         { name: "Sharma, Chirag", image: chirag },
         { name: "Vora, Vineet", image: vora},
       ],
