@@ -59,7 +59,7 @@ const MembersSection: FC = () => {
       ],
       undergrad: [
         { name: "Kanda, Karan", image: karan },
-        { name: "Cindy Qiao", image: cindy},
+        { name: "Qiao, Cindy", image: cindy},
         { name: "Yesgari, Rishik Reddy [1]", image: rishik },
       ],
     },
