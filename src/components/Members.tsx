@@ -18,6 +18,8 @@ import andrew from "../assets/andrew.jpg";
 import vora from "../assets/vora.jpg";
 import jeet from "../assets/jeet.jpg";
 import ashvin from "../assets/ashvin.jpeg";
+import huong from "../assets/huongle.png";
+import cindy from "../assets/cindyqiao.jpeg";
 
 interface Member {
   name: string;
@@ -57,6 +59,7 @@ const MembersSection: FC = () => {
       ],
       undergrad: [
         { name: "Kanda, Karan", image: karan },
+        { name: "Cindy Qiao", image: cindy},
         { name: "Yesgari, Rishik Reddy [1]", image: rishik },
       ],
     },
@@ -66,6 +69,7 @@ const MembersSection: FC = () => {
         role: "Associate Professor of Computer Science, SAE: GPU Expert",
         image: andrew,
       },
+      { name: "Huong Le", role: "SAE: AI for Agriculture and Finance", image: huong},
     ],
     advisory: [
       { name: "Guopei Qiao", role: "SMTS, AMD", image: qiao },
