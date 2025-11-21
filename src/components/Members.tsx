@@ -20,6 +20,7 @@ import jeet from "../assets/jeet.jpg";
 import ashvin from "../assets/ashvin.jpeg";
 import huong from "../assets/huongle.png";
 import cindy from "../assets/cindyqiao.jpeg";
+import nicole from "../assets/nicole.jpg";
 
 interface Member {
   name: string;
@@ -58,7 +59,8 @@ const MembersSection: FC = () => {
         { name: "Vora, Vineet", image: vora},
       ],
       undergrad: [
-        { name: "Kanda, Karan", image: karan },
+        { name: "Basmacier, Nicole", image: nicole },
+        { name: "Kanda, Karan", image: karan }, 
         { name: "Qiao, Cindy", image: cindy},
         { name: "Yesgari, Rishik Reddy [1]", image: rishik },
       ],
