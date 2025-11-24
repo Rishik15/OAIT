@@ -59,9 +59,9 @@ const MembersSection: FC = () => {
         { name: "Vora, Vineet", image: vora},
       ],
       undergrad: [
-        { name: "Basmacier, Nicole", image: nicole },
-        { name: "Kanda, Karan", image: karan }, 
-        { name: "Qiao, Cindy", image: cindy},
+        { name: "Basmacier, Nicole (Honors College)", image: nicole },
+        { name: "Kanda, Karan (Honors College)", image: karan }, 
+        { name: "Qiao, Cindy (University of Toronto)", image: cindy},
         { name: "Yesgari, Rishik Reddy [1]", image: rishik },
       ],
     },
